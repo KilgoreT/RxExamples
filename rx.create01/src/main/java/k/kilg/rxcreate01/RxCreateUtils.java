@@ -14,7 +14,7 @@ import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.subjects.PublishSubject;
 
-public class RxUtils {
+public class RxCreateUtils {
 
     /**
      * 01.
