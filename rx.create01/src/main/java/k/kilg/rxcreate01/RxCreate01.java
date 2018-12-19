@@ -57,7 +57,7 @@ public class RxCreate01 extends AppCompatActivity {
          * В subscriber размещается Consumer c "accept" callback.
          * в случае onComplete там размещается Action.
          */
-        RxUtils.getObserver(7)
+        RxCreateUtils.getObserver(7)
                 .subscribe(
                         // onNext
                         this::showText,
@@ -71,7 +71,7 @@ public class RxCreate01 extends AppCompatActivity {
     @OnClick(R.id.btn02WithCache)
     public void clickWithCache() {
         clearText();
-        RxUtils.getObserverWithCache(4, 5)
+        RxCreateUtils.getObserverWithCache(4, 5)
                 .subscribe(
                         this::showText,
                         error -> showError(error.getMessage()),
@@ -83,7 +83,7 @@ public class RxCreate01 extends AppCompatActivity {
     @OnClick(R.id.btn03WithUnSubscribe)
     public void click03() {
         clearText();
-        Disposable disposable = RxUtils.getObserverWithUnSubscriber(1, 7)
+        Disposable disposable = RxCreateUtils.getObserverWithUnSubscriber(1, 7)
                 .subscribe(
                         this::showText,
                         error -> showError(error.getMessage()),
@@ -96,7 +96,7 @@ public class RxCreate01 extends AppCompatActivity {
     @OnClick(R.id.btn04Error)
     public void click04() {
         clearText();
-        RxUtils.getErrorPattern()
+        RxCreateUtils.getErrorPattern()
                 .subscribe(
                         this::showText,
                         error -> showError(error.getMessage()),
@@ -124,7 +124,7 @@ public class RxCreate01 extends AppCompatActivity {
 
     private void loadHotObserver() {
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        RxUtils.getHotObservable(locationManager)
+        RxCreateUtils.getHotObservable(locationManager)
                 .subscribe(location -> {
                     text.setText(String.valueOf(location.getLatitude() + " " + location.getLongitude()));
                 },
@@ -142,7 +142,7 @@ public class RxCreate01 extends AppCompatActivity {
      */
     private void loadHotObserver2() {
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        Observable<Location> lazy = RxUtils.getHotObservable(locationManager).publish().refCount();
+        Observable<Location> lazy = RxCreateUtils.getHotObservable(locationManager).publish().refCount();
         System.out.println(">>>> До всех подписчиков");
         Disposable s1 = lazy.subscribe();
         System.out.println(">>>> 1 подписка");
@@ -167,7 +167,7 @@ public class RxCreate01 extends AppCompatActivity {
      */
     private void loadHotObserver3() {
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        ConnectableObservable<Location> published = RxUtils.getHotObservable(locationManager).publish();
+        ConnectableObservable<Location> published = RxCreateUtils.getHotObservable(locationManager).publish();
         Disposable d1 = published.subscribe();
         Disposable d2 = published.subscribe();
         published.connect();
