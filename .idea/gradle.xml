@@ -9,8 +9,11 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/mainModule" />
             <option value="$PROJECT_DIR$/rx.create01" />
             <option value="$PROJECT_DIR$/rx.operators" />
+            <option value="$PROJECT_DIR$/rx.sources" />
+            <option value="$PROJECT_DIR$/rxModule" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

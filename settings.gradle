@@ -1,1 +1,1 @@
-include ':app', ':rx.create01', ':rx.operators'
+include ':app', ':rx.create01', ':rx.operators', ':mainModule', ':rx.sources', ':rxModule'
