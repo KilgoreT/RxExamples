@@ -1,30 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RxOperators"
-    >
+    tools:context=".RxOperators">
 
     <TextView
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="48sp"
-        android:textColor="@android:color/black"
-        android:text=""
-        />
-    <Button
-        android:id="@+id/btn01FilterOdd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="11dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="5dp"
-        android:text="Simple Filter Odd"
-        />
+        android:gravity="start"
+        android:maxLines="8"
+        android:text=""
+        android:textColor="@android:color/black"
+        android:textSize="12sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn01FilterOdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Simple Filter Odd"
+                android:visibility="gone"
+                />
+
+            <Button
+                android:id="@+id/btn02Map"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Multiply (Map)"
+                android:visibility="gone"
+                />
+
+            <Button
+                android:id="@+id/btn03FlatMapSimple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Integer as String (Simple flatmap)"
+                android:visibility="gone"
+                />
+
+            <Button
+                android:id="@+id/btn04FlatMapMaxConcurrency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Integer as String Max Concurrency"
+                android:visibility="gone"
+                />
+
+            <Button
+                android:id="@+id/btn05MergeSimple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Merge Simple"
+                android:visibility="gone"
+                />
+
+            <Button
+                android:id="@+id/btn06MergeWithError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Merge Error"
+                android:visibility="gone"
+                />
+
+            <Button
+                android:id="@+id/btn07ZipSimple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Zip Simple"
+                android:visibility="gone"
+                />
+
+            <Button
+                android:id="@+id/btn08CombineLatest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Combine Latest"
+                android:visibility="gone"
+                />
+
+            <Button
+                android:id="@+id/btn09WithLatestFrom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="With Latest from"
+                android:visibility="gone"
+                />
+
+            <Button
+                android:id="@+id/btn10Amb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Amb"
+                android:visibility="gone"
+                />
+
+            <Button
+                android:id="@+id/btn11Scan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Scan"
+                android:visibility="gone"
+                />
+
+            <Button
+                android:id="@+id/btn12ScanWithDefault"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Scan with Default"
+                android:visibility="gone"
+                />
+
+            <Button
+                android:id="@+id/btn13Reduce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Reduce" />
+
+            <Button
+                android:id="@+id/btn14Collect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Collect" />
+
+            <Button
+                android:id="@+id/btn15Distinct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Distinct" />
+
+            <Button
+                android:id="@+id/btn16TakeUntil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="TakeUntil" />
+
+            <Button
+                android:id="@+id/btn17TakeWhile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="TakeWhile"
+                />
+
+            <Button
+                android:id="@+id/btn18SwitchOnNext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="SwitchOnNext"
+                />
+
+            <Button
+                android:id="@+id/btn19GroupByExample"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="GroupBy"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/operatorCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        style="@style/operatorCard.content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".7" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/gTitleBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/gBodyBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/operatorCard.title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="flatMap()"
+            app:layout_constraintBottom_toTopOf="@id/gTitleBottom"
+            app:layout_constraintStart_toEndOf="@id/guidelineStart" />
+
+        <TextView
+            android:id="@+id/code"
+            style="@style/operatorCard.body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/gBodyBottom"
+            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+            app:layout_constraintStart_toEndOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/gTitleBottom"
+            tools:text="Observable.
+                .just(10, 11, 12, 13)
+                .flatMap();" />
+
+        <Button
+            android:id="@+id/btn_run"
+            style="@style/operatorCard.runButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="run"
+            app:layout_constraintStart_toEndOf="@id/guidelineEnd"
+            app:layout_constraintTop_toTopOf="@id/gTitleBottom" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>
