@@ -21,9 +21,17 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="operatorCard.body">
+    <style name="operatorCard.docs">
+        <item name="android:maxLines">8</item>
+        <item name="android:textSize">8sp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:paddingStart">8dp</item>
+    </style>
+
+    <style name="operatorCard.code">
         <item name="android:maxLines">5</item>
         <item name="android:textSize">10sp</item>
+        <item name="android:paddingStart">8dp</item>
     </style>
 
     <style name="operatorCard.runButton">

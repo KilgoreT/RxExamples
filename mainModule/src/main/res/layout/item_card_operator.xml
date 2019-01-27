@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/operatorCard"
@@ -19,6 +18,13 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.05" />
 
+        <android.support.constraint.Guideline
+            android:id="@+id/guidelineIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
 
         <android.support.constraint.Guideline
             android:id="@+id/guidelineEnd"
@@ -34,13 +40,6 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.2" />
 
-        <android.support.constraint.Guideline
-            android:id="@+id/gBodyBottom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.9" />
-
         <TextView
             android:id="@+id/title"
             style="@style/operatorCard.title"
@@ -50,18 +49,52 @@
             app:layout_constraintBottom_toTopOf="@id/gTitleBottom"
             app:layout_constraintStart_toEndOf="@id/guidelineStart" />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_expand_less"
+            app:layout_constraintEnd_toStartOf="@id/guidelineIcon"
+            app:layout_constraintStart_toEndOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/gTitleBottom" />
+        <!--app:layout_constraintBottom_toTopOf="@id/gDocsBottom"-->
+
         <TextView
-            android:id="@+id/code"
-            style="@style/operatorCard.body"
+            android:id="@+id/docs"
+            style="@style/operatorCard.docs"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/gBodyBottom"
+            android:text="Комментарий для оператора"
+            app:layout_constraintBottom_toTopOf="@id/docsLong"
             app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
-            app:layout_constraintStart_toEndOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/gTitleBottom"
+            app:layout_constraintStart_toEndOf="@id/guidelineIcon"
+            app:layout_constraintTop_toBottomOf="@id/gTitleBottom" />
+
+        <TextView
+            android:id="@+id/docsLong"
+            style="@style/operatorCard.docs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Пример фильтрации четных чисел.\nПредикат возвращает только нечетные. Проблема переноса строка решена успешно? Или нет? Бывает, что документация у некоторых операторов очень громоздкая и не влазит в стандартные поля! Расчитывать, что все будет норм, сложно. К тому же трататат, лалалала, тыры пыры - пассатижы. В целом данного примера должно хватить на самый длинный комментарий"
+            app:layout_constraintBottom_toTopOf="@id/code"
+            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+            app:layout_constraintStart_toEndOf="@id/guidelineIcon"
+            app:layout_constraintTop_toBottomOf="@id/docs"
+            android:visibility="visible"
+            />
+
+        <TextView
+            android:id="@+id/code"
+            style="@style/operatorCard.code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/docsLong"
+            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+            app:layout_constraintStart_toEndOf="@id/guidelineIcon"
+            android:visibility="visible"
             tools:text="Observable.
                 .just(10, 11, 12, 13)
                 .flatMap();" />
+            <!--app:layout_constraintBottom_toTopOf="@id/gBodyBottom"-->
 
         <Button
             android:id="@+id/btn_run"
@@ -70,7 +103,8 @@
             android:layout_height="wrap_content"
             android:text="run"
             app:layout_constraintStart_toEndOf="@id/guidelineEnd"
-            app:layout_constraintTop_toTopOf="@id/gTitleBottom" />
+            />
+            <!--app:layout_constraintTop_toBottomOf="@id/gTitleBottom"-->
 
     </android.support.constraint.ConstraintLayout>
 
