@@ -7,6 +7,6 @@ public interface OperatorResultMvpView extends MvpFragmentView {
 
     // TODO: 04.01.19 переименовать
     MainMvpView getRoot();
-    void displayResult(Long longIndex);
+    void displayResult(String longIndex);
 
 }

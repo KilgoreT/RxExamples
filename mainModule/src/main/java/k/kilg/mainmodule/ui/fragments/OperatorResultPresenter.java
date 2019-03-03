@@ -13,13 +13,13 @@ public class OperatorResultPresenter<V extends OperatorResultMvpView> extends Ba
     @Override
     public void runOperator(String operator) {
 
-        Observable<Long> observableToRun;
+        Observable<String> observableToRun;
 
         try {
 
             Class clazz = Class.forName("k.kilg.rxmodule.Operators." + operator);
             Method method = clazz.getMethod("emit", null);
-            observableToRun = (Observable<Long>) method.invoke(null, null);
+            observableToRun = (Observable<String>) method.invoke(null, null);
 
             Disposable d = observableToRun
                     .observeOn(AndroidSchedulers.mainThread())

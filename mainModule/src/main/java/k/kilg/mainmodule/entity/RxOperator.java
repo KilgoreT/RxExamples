@@ -5,6 +5,7 @@ public class RxOperator {
     private String className;
     private String title;
     private String docs;
+    private String docsLong;
     private String code;
 
     public RxOperator(String className, String title, String docs, String code) {
@@ -36,5 +37,13 @@ public class RxOperator {
 
     public void setCode(String body) {
         this.code = body;
+    }
+
+    public String getDocs() {
+        return docs;
+    }
+
+    public void setDocs(String docs) {
+        this.docs = docs;
     }
 }

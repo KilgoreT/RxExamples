@@ -98,7 +98,7 @@ public class OperatorResultFragment extends BaseFragment implements OperatorResu
     }
 
     @Override
-    public void displayResult(Long longIndex) {
+    public void displayResult(String longIndex) {
         showText(longIndex);
     }
 

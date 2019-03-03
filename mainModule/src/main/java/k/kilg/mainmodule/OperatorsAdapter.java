@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -58,6 +59,15 @@ public class OperatorsAdapter extends RecyclerView.Adapter<OperatorsAdapter.Oper
         @BindView(R.id.title)
         TextView title;
 
+        @BindView(R.id.image)
+        ImageView image;
+
+        @BindView(R.id.docs)
+        TextView docs;
+
+        @BindView(R.id.docsLong)
+        TextView docsLong;
+
         @BindView(R.id.code)
         TextView code;
 
@@ -65,14 +75,26 @@ public class OperatorsAdapter extends RecyclerView.Adapter<OperatorsAdapter.Oper
         Button btnRun;
 
 
-        public OperatorsViewHolder(View itemView) {
+        OperatorsViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            docsLong.setVisibility(View.GONE);
+            image.setImageResource(R.drawable.ic_expand_more);
+            itemView.setOnClickListener(v -> {
+                if (docsLong.getVisibility() == View.VISIBLE) {
+                    docsLong.setVisibility(View.GONE);
+                    image.setImageResource(R.drawable.ic_expand_more);
+                } else {
+                    docsLong.setVisibility(View.VISIBLE);
+                    image.setImageResource(R.drawable.ic_expand_less);
+                }
+            });
         }
 
-        public void bind(RxOperator rxOperator) {
+        void bind(RxOperator rxOperator) {
             title.setText(rxOperator.getTitle());
             code.setText(rxOperator.getCode());
+            docsLong.setText(rxOperator.getDocs());
         }
 
     }

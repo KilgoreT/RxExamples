@@ -50,6 +50,7 @@
             app:layout_constraintStart_toEndOf="@id/guidelineStart" />
 
         <ImageView
+            android:id="@+id/image"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:src="@drawable/ic_expand_less"
@@ -75,6 +76,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Пример фильтрации четных чисел.\nПредикат возвращает только нечетные. Проблема переноса строка решена успешно? Или нет? Бывает, что документация у некоторых операторов очень громоздкая и не влазит в стандартные поля! Расчитывать, что все будет норм, сложно. К тому же трататат, лалалала, тыры пыры - пассатижы. В целом данного примера должно хватить на самый длинный комментарий"
+            android:textColor="@color/colorAccent"
             app:layout_constraintBottom_toTopOf="@id/code"
             app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
             app:layout_constraintStart_toEndOf="@id/guidelineIcon"

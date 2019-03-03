@@ -1,22 +1,23 @@
 package k.kilg.rxmodule.Operators;
 
+
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 
-
-//@tagName: interval
+//@tagName: map
 //@tagCategory: simple
-public class IntervalExample {
+public class MapExample {
 
     /**
-     * interval()
-     *  возвращает Long от 0 до бесконечности
-     *  с временным интервалом.
+     * map() изменяет каждое входящее событие
+     * Function(входящее, исходящее), в теле функции алгоритм изменения.
      */
+
     public static Observable<String> emit() {
         return Observable
                 .interval(500, TimeUnit.MILLISECONDS)
+                .map(integer -> integer * 10)
                 .map(String::valueOf);
     }
 }

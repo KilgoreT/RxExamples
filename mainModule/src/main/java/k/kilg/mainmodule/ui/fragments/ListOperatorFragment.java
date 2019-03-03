@@ -85,7 +85,9 @@ public class ListOperatorFragment extends BaseFragment implements ListOperationM
         for (String title : titleList) {
             List<String> properties = Arrays
                     .asList(getResources().getStringArray(getResources().getIdentifier(title, "array", getActivity().getPackageName())));
-            operatorList.add(new RxOperator(properties.get(CLASS_INDEX), title, properties.get(DOCS_INDEX), properties.get(CODE_INDEX)));
+            String docs = properties.get(DOCS_INDEX).replace("7nLine7", "\n").replace("7nTab7", "\t");
+            String code = properties.get(CODE_INDEX).replace("7nLine7", "\n").replace("7nTab7", "\t");
+            operatorList.add(new RxOperator(properties.get(CLASS_INDEX), title, docs, code));
         }
         mAdapter.setData(operatorList);
     }

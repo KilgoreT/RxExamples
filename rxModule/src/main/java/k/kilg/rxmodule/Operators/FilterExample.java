@@ -17,9 +17,10 @@ public class FilterExample {
      * Пример фильтрации четных чисел.
      *  Предикат возвращает только нечетные
      */
-    public static Observable<Long> emit() {
+    public static Observable<String> emit() {
         return Observable
                 .interval(500, TimeUnit.MILLISECONDS)
-                .filter(oddPredicate);
+                .filter(oddPredicate)
+                .map(String::valueOf);
     }
 }

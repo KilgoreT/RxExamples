@@ -123,7 +123,7 @@ public class PrepareContent {
         Pattern pattern = Pattern.compile(REGEX_CODE, Pattern.DOTALL);
         Matcher matcher = pattern.matcher(file);
         if (matcher.find()) {
-            return matcher.group(1);
+            return matcher.group(1).replace("\n", "7nLine7").replace("        ", "7nTab7");
         }
         return "";
     }
@@ -132,7 +132,7 @@ public class PrepareContent {
         Pattern pattern = Pattern.compile(REGEX_DOCS, Pattern.DOTALL);
         Matcher matcher = pattern.matcher(file);
         if (matcher.find()) {
-            return matcher.group(0);
+            return matcher.group(0).replace("\n", "7nLine7");
         }
         return "";
     }
