@@ -37,7 +37,7 @@ public class PrepareContent {
     private static final String REGEX_CLASS = "public class (.+?) ";
     private static final String REGEX_TITLE = "(//@tagName: )(.+)";
     private static final String REGEX_CATEGORY = "(//@tagCategory: )(.+)";
-    private static final String REGEX_CODE = "return\\s(.+?);";
+    private static final String REGEX_CODE = "return\\s(.*);";
     private static final String REGEX_DOCS = "\\/*\\*.+?\\*\\/";
 
     private static final String CLASS_NAME_KEY = "class_name_key";

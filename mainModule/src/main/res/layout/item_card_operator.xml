@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/operatorCard"
@@ -61,7 +62,7 @@
 
         <TextView
             android:id="@+id/docs"
-            style="@style/operatorCard.docs"
+            style="@style/operatorCard.shortdoc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Комментарий для оператора"
@@ -72,7 +73,7 @@
 
         <TextView
             android:id="@+id/docsLong"
-            style="@style/operatorCard.docs"
+            style="@style/operatorCard.doc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Пример фильтрации четных чисел.\nПредикат возвращает только нечетные. Проблема переноса строка решена успешно? Или нет? Бывает, что документация у некоторых операторов очень громоздкая и не влазит в стандартные поля! Расчитывать, что все будет норм, сложно. К тому же трататат, лалалала, тыры пыры - пассатижы. В целом данного примера должно хватить на самый длинный комментарий"
@@ -98,14 +99,13 @@
                 .flatMap();" />
             <!--app:layout_constraintBottom_toTopOf="@id/gBodyBottom"-->
 
-        <Button
+        <ImageView
             android:id="@+id/btn_run"
             style="@style/operatorCard.runButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="run"
-            app:layout_constraintStart_toEndOf="@id/guidelineEnd"
-            />
+            android:src="@drawable/ic_play_arrow"
+            app:layout_constraintStart_toEndOf="@id/guidelineEnd" />
             <!--app:layout_constraintTop_toBottomOf="@id/gTitleBottom"-->
 
     </android.support.constraint.ConstraintLayout>

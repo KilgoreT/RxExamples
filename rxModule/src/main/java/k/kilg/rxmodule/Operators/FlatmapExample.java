@@ -20,12 +20,14 @@ public class FlatmapExample {
     public static Observable<String> emit() {
         return Observable
                 .interval(500, TimeUnit.MILLISECONDS)
-                .flatMap((Function<Long, ObservableSource<String>>) integer -> {
-                            if ((integer & 1) > 0) {
-                                return Observable.just("№ " + integer + " is Odd!").delay(integer, TimeUnit.SECONDS);
-                            }
-                            return Observable.just("№ " + integer + " not Odd");
+                .flatMap(
+                    (Function<Long, ObservableSource<String>>) integer -> {
+                        if ((integer & 1) > 0) {
+                            return Observable.just("№ " + integer + " is Odd!")
+                                    .delay(integer, TimeUnit.SECONDS);
                         }
+                        return Observable.just("№ " + integer + " not Odd");
+                    }
                 );
     }
 
